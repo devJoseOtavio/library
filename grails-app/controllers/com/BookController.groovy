@@ -39,7 +39,7 @@ class BookController {
             Book book = Book.get(params.id as Long)
             book.name = params.name
             book.author = params.author
-            book.save(failOnError: true)
+            book.save()
             render([success: true] as JSON)
         } catch(Exception e) {
             render([success: false, message: message(code: "Ocorreu um erro ao atualizar o livro")] as JSON)
